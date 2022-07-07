@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'allSetScreen.dart';
 
 class LocationScreen extends StatefulWidget {
   @override
@@ -28,13 +29,18 @@ Widget buildTopText() {
   ]);
 }
 
-Widget buildEnablePushBtn() {
+Widget buildEnableLocationBtn(context) {
   return Container(
     padding: EdgeInsets.symmetric(vertical: 40),
     width: double.infinity,
     child: RaisedButton(
       elevation: 5,
-      onPressed: () => print('Enable Location Pressed'),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AllSetScreen()),
+        );
+      },
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: Colors.blue,
@@ -49,11 +55,16 @@ Widget buildEnablePushBtn() {
   );
 }
 
-Widget buildNotNowBtn() {
+Widget buildNotNowBtn(context) {
   return Container(
     alignment: Alignment.center,
     child: FlatButton(
-      onPressed: () => print("Not Now Pressed"),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => AllSetScreen()),
+        );
+      },
       child: Text(
         'Not Now',
         style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
@@ -93,8 +104,8 @@ class _LocationScreen extends State<LocationScreen> {
                             SizedBox(height: 160),
                             SizedBox(height: 50),
                             buildTopText(),
-                            buildEnablePushBtn(),
-                            buildNotNowBtn(),
+                            buildEnableLocationBtn(context),
+                            buildNotNowBtn(context),
                           ],
                         )))
               ],

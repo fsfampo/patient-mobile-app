@@ -2,7 +2,7 @@
 // Screen 3
 
 // UNFINSHED
-// FIX IMAGE, COUNTRY PICKER, GENDER, PREFERRED LANGUAGE, GRAY TEXT
+// Make country picker dropdown, add gender and preferred language, add gray text
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

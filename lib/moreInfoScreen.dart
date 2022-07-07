@@ -1,12 +1,12 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
 // Screen 4
-// UNFINISHED
-// FIX PICTURE AND DROPDOWN
+// NOTE: Make health a dropdown
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'healthInfoRegistration.dart';
 import 'benefitsImageTwo.dart';
+import 'withoutInsuranceScreen.dart';
 
 class MoreInfoScreen extends StatefulWidget {
   @override
@@ -64,12 +64,17 @@ Widget buildFirstName() {
   );
 }
 
-Widget buildNotOnListBtn() {
+Widget buildNotOnListBtn(context) {
   return Container(
     width: double.infinity,
     child: RaisedButton(
       elevation: 5,
-      onPressed: () => print('Not on List Pressed'),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => WithoutInsuranceScreen()),
+        );
+      },
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: Colors.grey,
@@ -145,7 +150,7 @@ class _MoreInfoScreen extends State<MoreInfoScreen> {
                             buildFirstName(),
                             SizedBox(height: 200),
                             buildContinueBtn(context),
-                            buildNotOnListBtn(),
+                            buildNotOnListBtn(context),
                           ],
                         )))
               ],

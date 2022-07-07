@@ -1,51 +1,54 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-// Screen 8
-
-// import 'dart:html';
+// Screen 9
+// NOTES: Contry and state has to be dropdown, fix layout of state and zipcode
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'locationScreen.dart';
+import 'healthInfoRegistration.dart';
+import 'benefitsImageTwo.dart';
 
-class PushNotifScreen extends StatefulWidget {
+class WithoutInsuranceScreen extends StatefulWidget {
   @override
-  _PushNotifScreen createState() => _PushNotifScreen();
+  _withoutInsuranceScreen createState() => _withoutInsuranceScreen();
 }
 
 Widget buildTopText() {
   return Column(children: <Widget>[
     Text(
-      'Now Stay in the Know',
+      'Set up without insurance or give us a call',
       style: TextStyle(
           color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
     ),
     Text(' '),
-    Text(' '),
-    Text(' '),
-    Text(' '),
     Text(
-      'NEVER MISS A VISIT. Allow push notifications to recieve video alerts on your phone and reminders about your upcoming visits.',
+      'Set up an account without insurance',
       style: TextStyle(
-          color: Colors.grey, fontSize: 16, fontWeight: FontWeight.bold),
+          color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+    ),
+    Text(
+      'If you would like to create a new account and pay a small fee per visit, this option is for you.',
+      style: TextStyle(color: Colors.black, fontSize: 16),
     ),
   ]);
 }
 
-Widget buildEnablePushBtn(context) {
+Widget buildContinueBtn(context) {
   return Container(
-    padding: EdgeInsets.symmetric(vertical: 40),
+    padding: EdgeInsets.symmetric(vertical: 10),
     width: double.infinity,
     child: RaisedButton(
       elevation: 5,
       onPressed: () {
         Navigator.push(
-            context, MaterialPageRoute(builder: (context) => LocationScreen()));
+          context,
+          MaterialPageRoute(builder: (context) => HealthInfoRegistration()),
+        );
       },
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: Colors.blue,
       child: Text(
-        'ENABLE PUSH NOTIFICATIONS           ►',
+        'CONTINUE           ►',
         style: TextStyle(
             color: Color.fromARGB(255, 252, 252, 252),
             fontSize: 18,
@@ -55,25 +58,7 @@ Widget buildEnablePushBtn(context) {
   );
 }
 
-Widget buildNotNowBtn(BuildContext context) {
-  return Container(
-    alignment: Alignment.center,
-    child: FlatButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => LocationScreen()),
-        );
-      },
-      child: Text(
-        'Not Now',
-        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-      ),
-    ),
-  );
-}
-
-class _PushNotifScreen extends State<PushNotifScreen> {
+class _withoutInsuranceScreen extends State<WithoutInsuranceScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -101,11 +86,11 @@ class _PushNotifScreen extends State<PushNotifScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            SizedBox(height: 160),
+                            benefitsImageTwo(),
+                            SizedBox(height: 90),
                             SizedBox(height: 50),
                             buildTopText(),
-                            buildEnablePushBtn(context),
-                            buildNotNowBtn(context),
+                            buildContinueBtn(context),
                           ],
                         )))
               ],
