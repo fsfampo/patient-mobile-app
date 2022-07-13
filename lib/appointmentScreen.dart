@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_const_constructors
-// Screen 10
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'Main Pages/home_page.dart';
 
-class AllSetScreen extends StatefulWidget {
+class AppointmentScreen extends StatefulWidget {
   @override
-  _AllSetScreen createState() => _AllSetScreen();
+  _AppointmentScreen createState() => _AppointmentScreen();
 }
 
 Widget builTextBtn(context) {
@@ -21,7 +20,7 @@ Widget builTextBtn(context) {
         );
       },
       child: Text(
-        "NAME, You're All Set!",
+        "APPOINTMENT SCREEN!",
         style: TextStyle(
             fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
       ),
@@ -29,7 +28,7 @@ Widget builTextBtn(context) {
   );
 }
 
-class _AllSetScreen extends State<AllSetScreen> {
+class _AppointmentScreen extends State<AppointmentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

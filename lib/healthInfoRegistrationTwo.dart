@@ -1,13 +1,11 @@
 // ignore_for_file: prefer_const_constructors
-// Screen 6
-
-// UNFINSHED
+// Forgot Password Screen
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:test2/benefitsImageFour.dart';
 import 'package:test2/dropdownBuild.dart';
 import 'pushNotifScreen.dart';
+import 'loginScreen.dart';
 // import 'package:country_picker/country_picker.dart';
 
 class HealthInfoRegistrationTwo extends StatefulWidget {
@@ -186,7 +184,6 @@ class _HealthInfoRegistrationTwo extends State<HealthInfoRegistrationTwo> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            benefitsImageFour(),
                             SizedBox(height: 5),
                             buildUsername(),
                             SizedBox(height: 20),

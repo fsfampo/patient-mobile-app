@@ -2,8 +2,10 @@
 // Screen 2
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:test2/Main%20Pages/home_page.dart';
 import 'package:test2/benefitsScreen.dart';
 import 'package:test2/loginImage.dart';
+import 'forgotPasswordScreen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -90,11 +92,16 @@ Widget buildPassword() {
 }
 
 // Build Button for Forgot Password
-Widget buildForgotPassBtn() {
+Widget buildForgotPassBtn(context) {
   return Container(
     alignment: Alignment.centerRight,
     child: FlatButton(
-      onPressed: () => print("Forgot Password Pressed"),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => ForgotPasswordScreen()),
+        );
+      },
       padding: EdgeInsets.only(right: 0),
       child: Text(
         'Forgot Password?',
@@ -105,13 +112,18 @@ Widget buildForgotPassBtn() {
 }
 
 // Build Button for Sign In
-Widget buildLoginBtn() {
+Widget buildLoginBtn(context) {
   return Container(
     padding: EdgeInsets.symmetric(vertical: 25),
     width: double.infinity,
     child: RaisedButton(
       elevation: 5,
-      onPressed: () => print('Login Pressed'),
+      onPressed: () {
+        Navigator.push(
+          context,
+          MaterialPageRoute(builder: (context) => HomePageScreen()),
+        );
+      },
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: Colors.blue,
@@ -175,8 +187,8 @@ class _LoginScreenState extends State<LoginScreen> {
                             buildEmail(),
                             SizedBox(height: 20),
                             buildPassword(),
-                            buildForgotPassBtn(),
-                            buildLoginBtn(),
+                            buildForgotPassBtn(context),
+                            buildLoginBtn(context),
                             buildSignUpBtn(context),
                           ],
                         )))

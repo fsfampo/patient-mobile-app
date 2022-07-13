@@ -1,59 +1,64 @@
-// Home Page
+// ignore_for_file: prefer_const_constructors
+// Screen 10
 
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
-
+class HomePageScreen extends StatefulWidget {
   @override
-  _HomePageState createState() => _HomePageState();
+  _HomePageScreen createState() => _HomePageScreen();
 }
 
-class _HomePageState extends State<HomePage> {
+Widget buildAppBar() {
+  return Scaffold(
+      appBar: AppBar(
+    title: Text("Hi, User"),
+    titleTextStyle: TextStyle(color: Colors.black, fontSize: 25),
+    backgroundColor: Colors.white,
+    elevation: 0,
+    actions: [
+      IconButton(
+        icon: Icon(Icons.doorbell_outlined),
+        color: Colors.black,
+        iconSize: 30,
+        onPressed: () => {},
+      ),
+      IconButton(
+        icon: Icon(Icons.search),
+        color: Colors.black,
+        iconSize: 30,
+        onPressed: () => {},
+      )
+    ],
+  ));
+}
+
+class _HomePageScreen extends State<HomePageScreen> {
+  int _selectedIndex = 0;
+
+  void _navigationBottomBar(int index) {
+    setState(() {
+      _selectedIndex = index;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: initWidget(),
-        ),
-      ),
-    );
-  }
-
-  Widget initWidget() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        buildAppBar(),
-        // buildGreetings(),
-      ],
-    );
-  }
-
-  Widget buildAppBar() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        Container(
-          width: 50,
-          height: 50,
-          margin: EdgeInsets.only(left: 20),
-          child: CircleAvatar(
-            backgroundColor: Colors.blue,
-          ),
-        ),
-        Container(
-          padding: EdgeInsets.all(10),
-          margin: EdgeInsets.only(right: 20),
-          decoration: BoxDecoration(
-              color: Colors.grey[50],
-              borderRadius: BorderRadius.circular(40),
-              border: Border.all(color: Colors.grey, width: 0.3)),
-        )
-      ],
+      backgroundColor: Colors.white,
+      bottomNavigationBar: BottomNavigationBar(
+          currentIndex: _selectedIndex,
+          onTap: _navigationBottomBar,
+          type: BottomNavigationBarType.fixed,
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: " "),
+            BottomNavigationBarItem(icon: Icon(Icons.medication), label: " "),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.heart_broken_rounded), label: " "),
+            BottomNavigationBarItem(icon: Icon(Icons.message), label: " "),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.calendar_month), label: " "),
+          ]),
     );
   }
 }
