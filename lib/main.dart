@@ -27,6 +27,7 @@ import 'dropdownBuild.dart';
 import 'appointmentScreen.dart';
 import 'medicationsScreen.dart';
 import 'rpmScreen.dart';
+import 'messagesScreen.dart';
 
 void main() {
   runApp(MyApp());
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Patient Mobile',
       debugShowCheckedModeBanner: false,
-      home: RpmScreen(),
+      home: LoginScreen(),
     );
   }
 }
