@@ -11,7 +11,7 @@ import 'healthInfoRegistrationTwo.dart'; // Screen 6 N
 import 'pushNotifScreen.dart'; // Screen 8 Y
 import 'locationScreen.dart'; // Screen 9 Y
 import 'allSetScreen.dart'; // Screen 10 Y
-import 'Main Pages/home_page.dart'; // Screen 11 N
+import 'home_page.dart'; // Screen 11 N
 // Screen 12
 // Screen 13
 // Screen 14
@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Patient Mobile',
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: HomePageScreen(),
     );
   }
 }

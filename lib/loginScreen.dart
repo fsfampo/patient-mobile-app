@@ -2,7 +2,7 @@
 // Screen 2
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:test2/Main%20Pages/home_page.dart';
+import 'package:test2/home_page.dart';
 import 'package:test2/benefitsScreen.dart';
 import 'package:test2/loginImage.dart';
 import 'forgotPasswordScreen.dart';
