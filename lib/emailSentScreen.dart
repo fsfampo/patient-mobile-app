@@ -4,25 +4,24 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:test2/emailSentScreen.dart';
 import 'package:test2/loginScreen.dart';
 import 'healthInfoRegistration.dart';
 
-class ForgotPasswordScreen extends StatefulWidget {
+class EmailSentScreen extends StatefulWidget {
   @override
-  _ForgotPasswordScreen createState() => _ForgotPasswordScreen();
+  _EmailSentScreen createState() => _EmailSentScreen();
 }
 
 Widget buildTopText() {
   return Column(children: <Widget>[
     Text(
-      'Forgot Password?',
+      'Email has been sent!',
       style: TextStyle(
           color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
     ),
     Text(' '),
     Text(
-      "Don't worry, we got you covered. Just type in your email below an we will send an email to reset your password.",
+      "An email with instructions for password reset has been sent!",
       style: TextStyle(
           color: Colors.grey, fontSize: 16, fontWeight: FontWeight.bold),
     ),
@@ -31,37 +30,18 @@ Widget buildTopText() {
   ]);
 }
 
-Widget buildSendEmail() {
-  return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
-    children: <Widget>[
-      Text(
-        'Email',
-        style: TextStyle(
-            color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
-      ),
-      SizedBox(height: 10),
-      Container(
-        alignment: Alignment.centerLeft,
-        decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                  color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
-            ]),
-        height: 60,
-        child: TextField(
-          style: TextStyle(color: Colors.black87),
-          decoration: InputDecoration(
-              border: InputBorder.none,
-              contentPadding: EdgeInsets.only(left: 7),
-              hintText: 'Email',
-              hintStyle: TextStyle(color: Colors.black38)),
-        ),
-      )
-    ],
-  );
+Widget buildResendBtn(BuildContext context) {
+  return Container(
+      alignment: Alignment.center,
+      child: FlatButton(
+          child: Text("Resend Email"),
+          // style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => EmailSentScreen()),
+            );
+          }));
 }
 
 Widget buildSendBtn(BuildContext context) {
@@ -73,14 +53,14 @@ Widget buildSendBtn(BuildContext context) {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => EmailSentScreen()),
+          MaterialPageRoute(builder: (context) => LoginScreen()),
         );
       },
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: Colors.blue,
       child: Text(
-        'SEND                                                   ►',
+        'LOGIN                                                   ►',
         style: TextStyle(
             color: Color.fromARGB(255, 252, 252, 252),
             fontSize: 18,
@@ -90,7 +70,7 @@ Widget buildSendBtn(BuildContext context) {
   );
 }
 
-class _ForgotPasswordScreen extends State<ForgotPasswordScreen> {
+class _EmailSentScreen extends State<EmailSentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -121,9 +101,9 @@ class _ForgotPasswordScreen extends State<ForgotPasswordScreen> {
                             SizedBox(height: 120),
                             SizedBox(height: 50),
                             buildTopText(),
-                            buildSendEmail(),
-                            SizedBox(height: 350),
+                            SizedBox(height: 20),
                             buildSendBtn(context),
+                            buildResendBtn(context)
                           ],
                         )))
               ],

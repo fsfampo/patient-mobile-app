@@ -28,6 +28,7 @@ import 'appointmentScreen.dart';
 import 'medicationsScreen.dart';
 import 'rpmScreen.dart';
 import 'messagesScreen.dart';
+import 'emailSentScreen.dart';
 
 void main() {
   runApp(MyApp());
