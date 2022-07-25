@@ -40,7 +40,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Patient Mobile',
       debugShowCheckedModeBanner: false,
-      home: HomePageScreen(),
+      home: LoginScreen(),
     );
   }
 }

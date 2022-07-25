@@ -69,7 +69,16 @@ flutter:
       - images/Cropped Softbir Logo.png
       - images/Softbir Logo 2.png
       - images/Heartbeat Logo.png
-      - images/heart.png
+      - images/Heart Tile.png
+      - images/Heart.png
+      - images/Asthma Tile.png
+      - images/Gastro Tile.png
+      - images/Diabetes Tile.png
+      - images/Pill.png
+      - images/Message.png
+      - images/Home.png
+      - images/Heartbeat.png
+      - images/Calendar.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see
