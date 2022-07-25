@@ -1,6 +1,6 @@
-# test2
+# Patient Mobile App
 
-A new Flutter project.
+The patient mobile app designed for Softbir Medical Solutions, WIP
 
 ## Getting Started
 
