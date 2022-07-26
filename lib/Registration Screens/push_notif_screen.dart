@@ -1,19 +1,21 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-// Screen 9
+// Screen 8
+
+// import 'dart:html';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'allSetScreen.dart';
+import 'share_location_screen.dart';
 
-class LocationScreen extends StatefulWidget {
+class PushNotifScreen extends StatefulWidget {
   @override
-  _LocationScreen createState() => _LocationScreen();
+  _PushNotifScreen createState() => _PushNotifScreen();
 }
 
 Widget buildTopText() {
   return Column(children: <Widget>[
     Text(
-      'Share Your Location',
+      'Now Stay in the Know',
       style: TextStyle(
           color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
     ),
@@ -22,14 +24,14 @@ Widget buildTopText() {
     Text(' '),
     Text(' '),
     Text(
-      'LET US KNOW WHERE YOU ARE. Sharing your location can expedite your visit requests, help youfind nearby pharmacies and enable helpful alerts on ways to use ApkaMD.',
+      'NEVER MISS A VISIT. Allow push notifications to recieve video alerts on your phone and reminders about your upcoming visits.',
       style: TextStyle(
           color: Colors.grey, fontSize: 16, fontWeight: FontWeight.bold),
     ),
   ]);
 }
 
-Widget buildEnableLocationBtn(context) {
+Widget buildEnablePushBtn(context) {
   return Container(
     padding: EdgeInsets.symmetric(vertical: 40),
     width: double.infinity,
@@ -37,15 +39,13 @@ Widget buildEnableLocationBtn(context) {
       elevation: 5,
       onPressed: () {
         Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => AllSetScreen()),
-        );
+            context, MaterialPageRoute(builder: (context) => LocationScreen()));
       },
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: Colors.blue,
       child: Text(
-        'ENABLE LOCATION SERVICES           ►',
+        'ENABLE PUSH NOTIFICATIONS           ►',
         style: TextStyle(
             color: Color.fromARGB(255, 252, 252, 252),
             fontSize: 18,
@@ -55,14 +55,14 @@ Widget buildEnableLocationBtn(context) {
   );
 }
 
-Widget buildNotNowBtn(context) {
+Widget buildNotNowBtn(BuildContext context) {
   return Container(
     alignment: Alignment.center,
     child: FlatButton(
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AllSetScreen()),
+          MaterialPageRoute(builder: (context) => LocationScreen()),
         );
       },
       child: Text(
@@ -73,7 +73,7 @@ Widget buildNotNowBtn(context) {
   );
 }
 
-class _LocationScreen extends State<LocationScreen> {
+class _PushNotifScreen extends State<PushNotifScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -104,7 +104,7 @@ class _LocationScreen extends State<LocationScreen> {
                             SizedBox(height: 160),
                             SizedBox(height: 50),
                             buildTopText(),
-                            buildEnableLocationBtn(context),
+                            buildEnablePushBtn(context),
                             buildNotNowBtn(context),
                           ],
                         )))

@@ -5,9 +5,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'healthInfoRegistrationTwo.dart';
-import 'package:test2/benefitsImageThree.dart';
-import 'package:test2/dropdownBuild.dart';
+import 'current_health_info_two_screen.dart';
+import 'package:test2/Widgets/benefits_image_three.dart';
+import 'package:test2/Widgets/dropdownBuild.dart';
 // import 'package:country_picker/country_picker.dart';
 
 class HealthInfoRegistration extends StatefulWidget {

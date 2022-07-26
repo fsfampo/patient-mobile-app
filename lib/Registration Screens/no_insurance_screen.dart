@@ -1,50 +1,38 @@
-// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
-// Screen 4
-// NOTE: Make health a dropdown
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
+// Screen 9
+// NOTES: Contry and state has to be dropdown, fix layout of state and zipcode
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:test2/loginScreen.dart';
-import 'healthInfoRegistration.dart';
+import 'current_health_info_one_screen.dart';
+import '../Widgets/benefits_image_two.dart';
 
-class EmailSentScreen extends StatefulWidget {
+class WithoutInsuranceScreen extends StatefulWidget {
   @override
-  _EmailSentScreen createState() => _EmailSentScreen();
+  _withoutInsuranceScreen createState() => _withoutInsuranceScreen();
 }
 
 Widget buildTopText() {
   return Column(children: <Widget>[
     Text(
-      'Email has been sent!',
+      'Set up without insurance or give us a call',
       style: TextStyle(
           color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
     ),
     Text(' '),
     Text(
-      "An email with instructions for password reset has been sent!",
+      'Set up an account without insurance',
       style: TextStyle(
-          color: Colors.grey, fontSize: 16, fontWeight: FontWeight.bold),
+          color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
     ),
-    Text(' '),
-    Text(' '),
+    Text(
+      'If you would like to create a new account and pay a small fee per visit, this option is for you.',
+      style: TextStyle(color: Colors.black, fontSize: 16),
+    ),
   ]);
 }
 
-Widget buildResendBtn(BuildContext context) {
-  return Container(
-      alignment: Alignment.center,
-      child: FlatButton(
-          child: Text("Resend Email"),
-          // style: TextStyle(color: Colors.blue, fontWeight: FontWeight.bold),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => EmailSentScreen()),
-            );
-          }));
-}
-
-Widget buildSendBtn(BuildContext context) {
+Widget buildContinueBtn(context) {
   return Container(
     padding: EdgeInsets.symmetric(vertical: 10),
     width: double.infinity,
@@ -53,14 +41,14 @@ Widget buildSendBtn(BuildContext context) {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => LoginScreen()),
+          MaterialPageRoute(builder: (context) => HealthInfoRegistration()),
         );
       },
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: Colors.blue,
       child: Text(
-        'LOGIN                                                   ►',
+        'CONTINUE           ►',
         style: TextStyle(
             color: Color.fromARGB(255, 252, 252, 252),
             fontSize: 18,
@@ -70,7 +58,7 @@ Widget buildSendBtn(BuildContext context) {
   );
 }
 
-class _EmailSentScreen extends State<EmailSentScreen> {
+class _withoutInsuranceScreen extends State<WithoutInsuranceScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -98,12 +86,11 @@ class _EmailSentScreen extends State<EmailSentScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            SizedBox(height: 120),
+                            benefitsImageTwo(),
+                            SizedBox(height: 90),
                             SizedBox(height: 50),
                             buildTopText(),
-                            SizedBox(height: 20),
-                            buildSendBtn(context),
-                            buildResendBtn(context)
+                            buildContinueBtn(context),
                           ],
                         )))
               ],

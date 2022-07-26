@@ -2,10 +2,11 @@
 // Screen 2
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:test2/home_page.dart';
-import 'package:test2/benefitsScreen.dart';
-import 'package:test2/loginImage.dart';
-import 'forgotPasswordScreen.dart';
+import 'package:test2/Main%20Screens/home_page.dart';
+// import 'package:test2/.dart';
+import 'package:test2/Widgets/login_image.dart';
+import 'package:test2/Registration Screens/personal_info_reg_screen.dart';
+import 'forgot_pw_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   @override

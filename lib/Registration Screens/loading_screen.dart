@@ -2,8 +2,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:test2/loadingScreenImageOne.dart';
-import 'package:test2/loadingScreenImageTwo.dart';
+import 'package:test2/Widgets/loadingScreenImageOne.dart';
+import 'package:test2/Widgets/loadingScreenImageTwo.dart';
 
 class LoadingScreen extends StatefulWidget {
   @override

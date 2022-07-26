@@ -1,38 +1,70 @@
-// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
-// Screen 9
-// NOTES: Contry and state has to be dropdown, fix layout of state and zipcode
+// ignore_for_file: prefer_const_literals_to_create_immutables, prefer_const_constructors
+// Screen 4
+// NOTE: Make health a dropdown
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'healthInfoRegistration.dart';
-import 'benefitsImageTwo.dart';
+import 'package:test2/Registration%20Screens/email_sent_screen.dart';
+import 'package:test2/Registration%20Screens/login_screen.dart';
+import 'current_health_info_one_screen.dart';
 
-class WithoutInsuranceScreen extends StatefulWidget {
+class ForgotPasswordScreen extends StatefulWidget {
   @override
-  _withoutInsuranceScreen createState() => _withoutInsuranceScreen();
+  _ForgotPasswordScreen createState() => _ForgotPasswordScreen();
 }
 
 Widget buildTopText() {
   return Column(children: <Widget>[
     Text(
-      'Set up without insurance or give us a call',
+      'Forgot Password?',
       style: TextStyle(
           color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
     ),
     Text(' '),
     Text(
-      'Set up an account without insurance',
+      "Don't worry, we got you covered. Just type in your email below an we will send an email to reset your password.",
       style: TextStyle(
-          color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+          color: Colors.grey, fontSize: 16, fontWeight: FontWeight.bold),
     ),
-    Text(
-      'If you would like to create a new account and pay a small fee per visit, this option is for you.',
-      style: TextStyle(color: Colors.black, fontSize: 16),
-    ),
+    Text(' '),
+    Text(' '),
   ]);
 }
 
-Widget buildContinueBtn(context) {
+Widget buildSendEmail() {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      Text(
+        'Email',
+        style: TextStyle(
+            color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+      ),
+      SizedBox(height: 10),
+      Container(
+        alignment: Alignment.centerLeft,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
+            ]),
+        height: 60,
+        child: TextField(
+          style: TextStyle(color: Colors.black87),
+          decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 7),
+              hintText: 'Email',
+              hintStyle: TextStyle(color: Colors.black38)),
+        ),
+      )
+    ],
+  );
+}
+
+Widget buildSendBtn(BuildContext context) {
   return Container(
     padding: EdgeInsets.symmetric(vertical: 10),
     width: double.infinity,
@@ -41,14 +73,14 @@ Widget buildContinueBtn(context) {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HealthInfoRegistration()),
+          MaterialPageRoute(builder: (context) => EmailSentScreen()),
         );
       },
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: Colors.blue,
       child: Text(
-        'CONTINUE           ►',
+        'SEND                                                   ►',
         style: TextStyle(
             color: Color.fromARGB(255, 252, 252, 252),
             fontSize: 18,
@@ -58,7 +90,7 @@ Widget buildContinueBtn(context) {
   );
 }
 
-class _withoutInsuranceScreen extends State<WithoutInsuranceScreen> {
+class _ForgotPasswordScreen extends State<ForgotPasswordScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,11 +118,12 @@ class _withoutInsuranceScreen extends State<WithoutInsuranceScreen> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            benefitsImageTwo(),
-                            SizedBox(height: 90),
+                            SizedBox(height: 120),
                             SizedBox(height: 50),
                             buildTopText(),
-                            buildContinueBtn(context),
+                            buildSendEmail(),
+                            SizedBox(height: 350),
+                            buildSendBtn(context),
                           ],
                         )))
               ],

@@ -3,9 +3,9 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:test2/cardOne.dart';
-import 'cardTwo.dart';
-import 'package:test2/doctorScreen.dart';
+import 'package:test2/Widgets/card_one.dart';
+import '../Widgets/card_two.dart';
+import 'package:test2/Main%20Screens/doctor_screen.dart';
 
 class HomePageScreen extends StatefulWidget {
   @override

@@ -1,31 +1,34 @@
 // ignore_for_file: prefer_const_constructors
-// Forgot Password Screen
+// Screen 3
+
+// UNFINSHED
+// Make country picker dropdown, add gender and preferred language, add gray text
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:test2/dropdownBuild.dart';
-import 'pushNotifScreen.dart';
-import 'loginScreen.dart';
+import 'package:test2/Widgets/benefits_image_one.dart';
+import 'package:test2/Widgets/dropdownBuild.dart';
+import 'insurance_info_reg_screen.dart';
 // import 'package:country_picker/country_picker.dart';
 
-class HealthInfoRegistrationTwo extends StatefulWidget {
+class BenefitsScreen extends StatefulWidget {
   @override
-  _HealthInfoRegistrationTwo createState() => _HealthInfoRegistrationTwo();
+  _BenefitsScreenState createState() => _BenefitsScreenState();
 }
 
-Widget buildUsername() {
+Widget buildFirstName() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Text(
-        "Perfect! Let's tie up the details",
+        "Let's start by finding your benefits",
         style: TextStyle(
             color: Colors.black, fontSize: 25, fontWeight: FontWeight.bold),
       ),
       Text(' '),
       Text(' '),
       Text(
-        'Username',
+        'First Name',
         style: TextStyle(
             color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
       ),
@@ -45,7 +48,7 @@ Widget buildUsername() {
           decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(left: 7),
-              hintText: 'Username',
+              hintText: 'First Name',
               hintStyle: TextStyle(color: Colors.black38)),
         ),
       )
@@ -53,12 +56,12 @@ Widget buildUsername() {
   );
 }
 
-Widget buildPassword() {
+Widget buildLastName() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Text(
-        'Password',
+        'Last Name',
         style: TextStyle(
             color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
       ),
@@ -78,7 +81,7 @@ Widget buildPassword() {
           decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(left: 7),
-              hintText: 'Password',
+              hintText: 'Last Name',
               hintStyle: TextStyle(color: Colors.black38)),
         ),
       )
@@ -86,12 +89,12 @@ Widget buildPassword() {
   );
 }
 
-Widget buildConfirmPassword() {
+Widget buildCountry() {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: <Widget>[
       Text(
-        'Confirm Password',
+        'Country',
         style: TextStyle(
             color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
       ),
@@ -111,7 +114,7 @@ Widget buildConfirmPassword() {
           decoration: InputDecoration(
               border: InputBorder.none,
               contentPadding: EdgeInsets.only(left: 7),
-              hintText: 'Confirm Password',
+              hintText: 'Country',
               hintStyle: TextStyle(color: Colors.black38)),
         ),
       )
@@ -119,18 +122,75 @@ Widget buildConfirmPassword() {
   );
 }
 
-Widget buildRegistrationText() {
+Widget buildZipCode() {
   return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Text(
-          "By tapping 'COMPLETE REGISTRATION' below, I certify that I have read and understand the Web and Mobile Privacy Policy and agree to be legally bound by the Web and Mobile Terms and Conditions.",
-          style: TextStyle(color: Colors.grey, fontSize: 15),
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      Text(
+        'Zip Code',
+        style: TextStyle(
+            color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+      ),
+      SizedBox(height: 10),
+      Container(
+        alignment: Alignment.centerLeft,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+              BoxShadow(
+                  color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
+            ]),
+        height: 60,
+        child: TextField(
+          keyboardType: TextInputType.number,
+          style: TextStyle(color: Colors.black87),
+          decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 7),
+              hintText: 'Zip Code',
+              hintStyle: TextStyle(color: Colors.black38)),
         ),
-      ]);
+      )
+    ],
+  );
 }
 
-Widget buildCompleteRegistrationBtn(BuildContext context) {
+Widget buildEmail() {
+  return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: <Widget>[
+      Text(
+        'Email Address',
+        style: TextStyle(
+            color: Colors.black, fontSize: 16, fontWeight: FontWeight.bold),
+      ),
+      SizedBox(height: 10),
+      Container(
+        alignment: Alignment.centerLeft,
+        decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: const [
+              BoxShadow(
+                  color: Colors.black26, blurRadius: 6, offset: Offset(0, 2))
+            ]),
+        height: 60,
+        child: TextField(
+          keyboardType: TextInputType.emailAddress,
+          style: TextStyle(color: Colors.black87),
+          decoration: InputDecoration(
+              border: InputBorder.none,
+              contentPadding: EdgeInsets.only(left: 7),
+              hintText: 'Email Address',
+              hintStyle: TextStyle(color: Colors.black38)),
+        ),
+      )
+    ],
+  );
+}
+
+Widget buildContinueBtn(BuildContext context) {
   return Container(
     padding: EdgeInsets.symmetric(vertical: 25),
     width: double.infinity,
@@ -139,14 +199,14 @@ Widget buildCompleteRegistrationBtn(BuildContext context) {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PushNotifScreen()),
+          MaterialPageRoute(builder: (context) => MoreInfoScreen()),
         );
       },
       padding: EdgeInsets.all(15),
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       color: Colors.blue,
       child: Text(
-        'COMPLETE REGISTRATION           ►',
+        'CONTINUE           ►',
         style: TextStyle(
             color: Color.fromARGB(255, 252, 252, 252),
             fontSize: 20,
@@ -156,7 +216,7 @@ Widget buildCompleteRegistrationBtn(BuildContext context) {
   );
 }
 
-class _HealthInfoRegistrationTwo extends State<HealthInfoRegistrationTwo> {
+class _BenefitsScreenState extends State<BenefitsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -184,18 +244,19 @@ class _HealthInfoRegistrationTwo extends State<HealthInfoRegistrationTwo> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
+                            benefitsImageOne(),
                             SizedBox(height: 5),
-                            buildUsername(),
+                            buildFirstName(),
                             SizedBox(height: 20),
-                            buildPassword(),
+                            buildLastName(),
                             SizedBox(height: 20),
-                            buildConfirmPassword(),
-                            SizedBox(
-                              height: 190,
-                            ),
-                            buildRegistrationText(),
-                            SizedBox(height: 0),
-                            buildCompleteRegistrationBtn(context),
+                            buildCountry(),
+                            SizedBox(height: 20),
+                            buildZipCode(),
+                            SizedBox(height: 20),
+                            buildEmail(),
+                            SizedBox(height: 10),
+                            buildContinueBtn(context),
                           ],
                         )))
               ],
