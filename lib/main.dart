@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:test2/Main%20Screens/payments_screen.dart';
+import 'package:test2/Main%20Screens/personal_information_screen.dart';
 // import 'package:test2/messagesScreen.dart';
 import 'Registration Screens/loading_screen.dart'; // Screen 1 Y
 import 'Registration Screens/login_screen.dart'; // Screen 2 Y
@@ -40,7 +42,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Patient Mobile',
       debugShowCheckedModeBanner: false,
-      home: LoginScreen(),
+      home: PaymentsScreen(),
     );
   }
 }

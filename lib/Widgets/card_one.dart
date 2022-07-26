@@ -16,8 +16,8 @@ class CardOne extends StatelessWidget {
             print("A");
           },
           child: Container(
-            width: 80,
-            height: 80,
+            width: 65,
+            height: 65,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: Colors.grey,

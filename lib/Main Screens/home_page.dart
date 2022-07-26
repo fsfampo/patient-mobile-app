@@ -3,6 +3,8 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:test2/Main%20Screens/medical_records_screen.dart';
+import 'package:test2/Main%20Screens/personal_information_screen.dart';
 import 'package:test2/Widgets/card_one.dart';
 import '../Widgets/card_two.dart';
 import 'package:test2/Main%20Screens/doctor_screen.dart';
@@ -29,11 +31,19 @@ class _HomePageScreen extends State<HomePageScreen> {
                       children: [
                         Icon(Icons.person),
                         Text("  "),
-                        Text(
-                          "Hi, USER",
-                          style: TextStyle(
-                            fontSize: 25,
+                        TextButton(
+                          child: Text(
+                            "Hi, USER",
+                            style: TextStyle(fontSize: 25, color: Colors.black),
                           ),
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) =>
+                                      PersonalInformationScreen()),
+                            );
+                          },
                         )
                       ],
                     ),
@@ -41,13 +51,23 @@ class _HomePageScreen extends State<HomePageScreen> {
                     // Icon(Icons.settings)
                   ])),
 
-          SizedBox(height: 25),
-          Text(
-            "Fill out your medical history to get started",
-            style: TextStyle(
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-                decoration: TextDecoration.underline),
+          SizedBox(height: 5),
+
+          TextButton(
+            child: Text(
+              "Fill out your medical history to get started",
+              style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                  decoration: TextDecoration.underline),
+            ),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => MedicalRecordsScreen()),
+              );
+            },
           ),
           SizedBox(height: 10),
 
