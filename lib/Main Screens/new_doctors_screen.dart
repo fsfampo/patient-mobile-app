@@ -1,13 +1,12 @@
 // ignore_for_file: prefer_const_constructors
-// Screen 10
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../Main Screens/home_page.dart';
+import 'home_page.dart';
 
-class AllSetScreen extends StatefulWidget {
+class NewDoctorsScreen extends StatefulWidget {
   @override
-  _AllSetScreen createState() => _AllSetScreen();
+  _NewDoctorsScreen createState() => _NewDoctorsScreen();
 }
 
 Widget builTextBtn(context) {
@@ -21,7 +20,7 @@ Widget builTextBtn(context) {
         );
       },
       child: Text(
-        "John, You're All Set!",
+        "NEW DOCTORS SCREEN!",
         style: TextStyle(
             fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
       ),
@@ -29,7 +28,7 @@ Widget builTextBtn(context) {
   );
 }
 
-class _AllSetScreen extends State<AllSetScreen> {
+class _NewDoctorsScreen extends State<NewDoctorsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

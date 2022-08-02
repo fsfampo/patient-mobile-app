@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:test2/Main%20Screens/payments_screen.dart';
+import 'package:test2/Main%20Screens/add_member_id_screen.dart';
+import 'package:test2/Main%20Screens/billing_screen.dart';
+import 'package:test2/Main%20Screens/insurance_screen.dart';
+import 'package:test2/Main%20Screens/medical_records_screen.dart';
+import 'package:test2/Main%20Screens/medical_records_screen_four.dart';
+import 'package:test2/Main%20Screens/medical_records_screen_three.dart';
+import 'package:test2/Main%20Screens/medical_records_screen_two.dart';
+import 'package:test2/Main%20Screens/new_doctors_screen.dart';
 import 'package:test2/Main%20Screens/personal_information_screen.dart';
+import 'package:test2/Main%20Screens/schedule_appointment_screen.dart';
 // import 'package:test2/messagesScreen.dart';
 import 'Registration Screens/loading_screen.dart'; // Screen 1 Y
 import 'Registration Screens/login_screen.dart'; // Screen 2 Y
@@ -42,7 +50,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Patient Mobile',
       debugShowCheckedModeBanner: false,
-      home: PaymentsScreen(),
+      home: ScheduleAppointmentScreen(),
     );
   }
 }

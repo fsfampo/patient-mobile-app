@@ -1,13 +1,13 @@
 // ignore_for_file: prefer_const_constructors
-// Screen 10
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import '../Main Screens/home_page.dart';
+import 'package:test2/Registration%20Screens/push_notif_screen.dart';
+// import 'home_page.dart';
 
-class AllSetScreen extends StatefulWidget {
+class PinScreen extends StatefulWidget {
   @override
-  _AllSetScreen createState() => _AllSetScreen();
+  _PinScreen createState() => _PinScreen();
 }
 
 Widget builTextBtn(context) {
@@ -17,11 +17,11 @@ Widget builTextBtn(context) {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => HomePageScreen()),
+          MaterialPageRoute(builder: (context) => PushNotifScreen()),
         );
       },
       child: Text(
-        "John, You're All Set!",
+        "PIN SCREEN!",
         style: TextStyle(
             fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
       ),
@@ -29,7 +29,7 @@ Widget builTextBtn(context) {
   );
 }
 
-class _AllSetScreen extends State<AllSetScreen> {
+class _PinScreen extends State<PinScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

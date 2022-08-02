@@ -33,7 +33,7 @@ class _HomePageScreen extends State<HomePageScreen> {
                         Text("  "),
                         TextButton(
                           child: Text(
-                            "Hi, USER",
+                            "Hi, Luke",
                             style: TextStyle(fontSize: 25, color: Colors.black),
                           ),
                           onPressed: () {

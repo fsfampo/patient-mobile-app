@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:test2/Main%20Screens/new_doctors_screen.dart';
+import 'package:test2/Main%20Screens/new_doctors_screen_two.dart';
 import 'package:test2/Main%20Screens/schedule_appointment_screen.dart';
 
-class CardOne extends StatelessWidget {
+class CardFour extends StatelessWidget {
   final iconImagePath;
 
-  const CardOne({
+  const CardFour({
     Key? key,
     required this.iconImagePath,
   }) : super(key: key);
@@ -16,13 +18,12 @@ class CardOne extends StatelessWidget {
           onTap: () {
             Navigator.push(
               context,
-              MaterialPageRoute(
-                  builder: (context) => ScheduleAppointmentScreen()),
+              MaterialPageRoute(builder: (context) => NewDoctorsScreenTwo()),
             );
           },
           child: Container(
-            width: 65,
-            height: 65,
+            width: 90,
+            height: 90,
             padding: EdgeInsets.all(20),
             decoration: BoxDecoration(
               color: Colors.grey,

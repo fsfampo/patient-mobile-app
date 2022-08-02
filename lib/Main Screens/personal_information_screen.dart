@@ -4,7 +4,7 @@ import 'package:test2/Main%20Screens/education_screen.dart';
 import 'package:test2/Main%20Screens/insurance_screen.dart';
 import 'package:test2/Main%20Screens/medical_records_screen.dart';
 import 'package:test2/Main%20Screens/online_forms_screen.dart';
-import 'package:test2/Main%20Screens/payments_screen.dart';
+import 'package:test2/Main%20Screens/billing_screen.dart';
 import 'home_page.dart';
 
 class PersonalInformationScreen extends StatefulWidget {
@@ -25,7 +25,7 @@ class _PersonalInformationScreen extends State<PersonalInformationScreen> {
             children: [
               // Icon(Icons.arrow_back_ios),
               Text(
-                "NAME",
+                "Luke Obrique",
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25,
@@ -97,7 +97,7 @@ class _PersonalInformationScreen extends State<PersonalInformationScreen> {
                   padding: EdgeInsets.all(15),
                   color: Color.fromARGB(255, 255, 255, 255),
                   child: Text(
-                    'Online Forms >',
+                    '📝  Online Forms                                   >',
                     style: TextStyle(
                         color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 20,
@@ -120,15 +120,15 @@ class _PersonalInformationScreen extends State<PersonalInformationScreen> {
                   onPressed: () {
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => PaymentsScreen()),
+                      MaterialPageRoute(builder: (context) => BillingScreen()),
                     );
                   },
                   padding: EdgeInsets.all(15),
-                  color: Color.fromARGB(255, 0, 103, 187),
+                  color: Color.fromARGB(255, 255, 255, 255),
                   child: Text(
-                    'Payments >',
+                    '🧾  Payments                                        >',
                     style: TextStyle(
-                        color: Color.fromARGB(255, 252, 252, 252),
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
@@ -154,11 +154,11 @@ class _PersonalInformationScreen extends State<PersonalInformationScreen> {
                     );
                   },
                   padding: EdgeInsets.all(15),
-                  color: Color.fromARGB(255, 0, 103, 187),
+                  color: Color.fromARGB(255, 255, 255, 255),
                   child: Text(
-                    'Medical Records >',
+                    '⚕️  Medical Records                             >',
                     style: TextStyle(
-                        color: Color.fromARGB(255, 252, 252, 252),
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
@@ -183,11 +183,11 @@ class _PersonalInformationScreen extends State<PersonalInformationScreen> {
                     );
                   },
                   padding: EdgeInsets.all(15),
-                  color: Color.fromARGB(255, 0, 103, 187),
+                  color: Color.fromARGB(255, 255, 255, 255),
                   child: Text(
-                    'Insurance >',
+                    '💲   Insurance                                        >',
                     style: TextStyle(
-                        color: Color.fromARGB(255, 252, 252, 252),
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
@@ -212,11 +212,11 @@ class _PersonalInformationScreen extends State<PersonalInformationScreen> {
                     );
                   },
                   padding: EdgeInsets.all(15),
-                  color: Color.fromARGB(255, 0, 103, 187),
+                  color: Color.fromARGB(255, 255, 255, 255),
                   child: Text(
-                    'Education >',
+                    '🏫  Education                                         >',
                     style: TextStyle(
-                        color: Color.fromARGB(255, 252, 252, 252),
+                        color: Color.fromARGB(255, 0, 0, 0),
                         fontSize: 20,
                         fontWeight: FontWeight.bold),
                   ),
@@ -241,7 +241,7 @@ class _PersonalInformationScreen extends State<PersonalInformationScreen> {
           ),
 
           Text(
-            "None",
+            "New Lab Results - 5:30 pm",
             style: TextStyle(
               fontSize: 15,
               color: Colors.grey,

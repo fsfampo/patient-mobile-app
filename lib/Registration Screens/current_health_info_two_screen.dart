@@ -3,6 +3,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:test2/Registration%20Screens/pin_screen.dart';
 import 'package:test2/Widgets/dropdownBuild.dart';
 import 'push_notif_screen.dart';
 import 'login_screen.dart';
@@ -139,7 +140,7 @@ Widget buildCompleteRegistrationBtn(BuildContext context) {
       onPressed: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => PushNotifScreen()),
+          MaterialPageRoute(builder: (context) => PinScreen()),
         );
       },
       padding: EdgeInsets.all(15),
