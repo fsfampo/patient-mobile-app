@@ -9,58 +9,56 @@ class AppointmentScreen extends StatefulWidget {
   _AppointmentScreen createState() => _AppointmentScreen();
 }
 
-Widget builTextBtn(context) {
-  return Container(
-    alignment: Alignment.center,
-    child: FlatButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => HomePageScreen()),
-        );
-      },
-      child: Text(
-        "APPOINTMENT SCREEN!",
-        style: TextStyle(
-            fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
-      ),
-    ),
-  );
-}
-
 class _AppointmentScreen extends State<AppointmentScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: AnnotatedRegion<SystemUiOverlayStyle>(
-            value: SystemUiOverlayStyle.light,
-            child: GestureDetector(
-                child: Stack(
-              children: <Widget>[
-                Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                          Color.fromARGB(255, 255, 255, 255),
-                          Color.fromARGB(255, 255, 255, 255),
-                          Color.fromARGB(255, 255, 255, 255),
-                          Color.fromARGB(255, 255, 255, 255),
-                        ])),
-                    child: SingleChildScrollView(
-                        physics: AlwaysScrollableScrollPhysics(),
-                        padding: EdgeInsets.symmetric(horizontal: 25),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            SizedBox(height: 400),
-                            builTextBtn(context),
-                          ],
-                        )))
-              ],
-            ))));
+        backgroundColor: Colors.white,
+        body: SafeArea(
+            child: Center(
+          child: Column(children: [
+            Text(
+              "My Appointments",
+              style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+            ),
+            SizedBox(
+              height: 10,
+            ),
+            // January
+            Container(
+              width: 300,
+              height: 300,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 230, 230, 230),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Text(
+                '   January',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            Container(
+              width: 300,
+              height: 300,
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 230, 230, 230),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Text(
+                '   February',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+            ),
+          ]),
+        )));
   }
 }
