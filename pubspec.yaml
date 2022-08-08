@@ -81,6 +81,14 @@ flutter:
       - images/Home.png
       - images/Heartbeat.png
       - images/Calendar.png
+      - images/Beast Boy.JPG
+      - images/Cyborg.JPG
+      - images/Robin 2 smaller.png
+      - images/Starfire.JPG
+      - images/star-circle.png
+      - images/robin-circle.png
+      - images/beast-circle.png
+      - images/cyborg-circle.png
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

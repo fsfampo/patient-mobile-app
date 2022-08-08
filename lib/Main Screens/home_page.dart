@@ -6,8 +6,24 @@ import 'package:flutter/services.dart';
 import 'package:test2/Main%20Screens/medical_records_screen.dart';
 import 'package:test2/Main%20Screens/personal_information_screen.dart';
 import 'package:test2/Widgets/card_one.dart';
+import 'package:test2/Widgets/doctor_one_card.dart';
+import 'package:test2/Widgets/home_card.dart';
 import '../Widgets/card_two.dart';
 import 'package:test2/Main%20Screens/doctor_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:test2/Main%20Screens/medications_screen.dart';
+import 'package:test2/Main%20Screens/rpm_screen.dart';
+import 'package:test2/Widgets/appointment_card.dart';
+import 'package:test2/Widgets/card_four.dart';
+import 'package:test2/Widgets/medication_card.dart';
+import 'package:test2/Widgets/messages_card.dart';
+import 'package:test2/Widgets/rpm_card.dart';
+import 'home_page.dart';
+import 'package:test2/Widgets/card_one.dart';
+import 'package:test2/Widgets/card_three.dart';
+import '../Widgets/card_two.dart';
+import 'package:test2/Widgets/home_card.dart';
 
 class HomePageScreen extends StatefulWidget {
   @override
@@ -251,14 +267,14 @@ class _HomePageScreen extends State<HomePageScreen> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               // Heart Button
-              CardOne(iconImagePath: 'images/Heart.png'),
-              CardOne(iconImagePath: 'images/Heart.png'),
-              CardOne(iconImagePath: 'images/Heart.png'),
-              CardOne(iconImagePath: 'images/Heart.png'),
+              DoctorOne(iconImagePath: 'images/Robin 2 smaller.png'),
+              CardOne(iconImagePath: 'images/Beast Boy.JPG'),
+              CardOne(iconImagePath: 'images/Cyborg.JPG'),
+              CardOne(iconImagePath: 'images/Starfire.JPG'),
             ],
           ),
 
-          SizedBox(height: 45),
+          SizedBox(height: 35),
 
           // Bottom Nav Bar
           Container(
@@ -270,11 +286,11 @@ class _HomePageScreen extends State<HomePageScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   Text(" "),
-                  CardTwo(iconImagePath: 'images/Home.png'),
-                  CardTwo(iconImagePath: 'images/Pill.png'),
-                  CardTwo(iconImagePath: 'images/Heartbeat.png'),
-                  CardTwo(iconImagePath: 'images/Message.png'),
-                  CardTwo(iconImagePath: 'images/Calendar.png'),
+                  HomeCard(iconImagePath: 'images/Home.png'),
+                  MedicationsCard(iconImagePath: 'images/Pill.png'),
+                  RPMCard(iconImagePath: 'images/Heartbeat.png'),
+                  MessagesCard(iconImagePath: 'images/Message.png'),
+                  AppointmentCard(iconImagePath: 'images/Calendar.png'),
                 ]),
           )
         ])));

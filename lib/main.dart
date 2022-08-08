@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Patient Mobile',
       debugShowCheckedModeBanner: false,
-      home: ScheduleAppointmentScreen(),
+      home: MessagesScreen(),
     );
   }
 }

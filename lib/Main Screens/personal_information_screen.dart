@@ -3,6 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:test2/Main%20Screens/education_screen.dart';
 import 'package:test2/Main%20Screens/insurance_screen.dart';
 import 'package:test2/Main%20Screens/medical_records_screen.dart';
+import 'package:test2/Main%20Screens/medical_records_seven.dart';
 import 'package:test2/Main%20Screens/online_forms_screen.dart';
 import 'package:test2/Main%20Screens/billing_screen.dart';
 import 'home_page.dart';
@@ -150,7 +151,7 @@ class _PersonalInformationScreen extends State<PersonalInformationScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => MedicalRecordsScreen()),
+                          builder: (context) => MedicalRecordsScreenSeven()),
                     );
                   },
                   padding: EdgeInsets.all(15),

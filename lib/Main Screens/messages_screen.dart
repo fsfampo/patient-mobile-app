@@ -9,58 +9,71 @@ class MessagesScreen extends StatefulWidget {
   _MessagesScreen createState() => _MessagesScreen();
 }
 
-Widget builTextBtn(context) {
-  return Container(
-    alignment: Alignment.center,
-    child: FlatButton(
-      onPressed: () {
-        Navigator.push(
-          context,
-          MaterialPageRoute(builder: (context) => HomePageScreen()),
-        );
-      },
-      child: Text(
-        "MESSAGES SCREEN!",
-        style: TextStyle(
-            fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
-      ),
-    ),
-  );
-}
-
 class _MessagesScreen extends State<MessagesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: AnnotatedRegion<SystemUiOverlayStyle>(
-            value: SystemUiOverlayStyle.light,
-            child: GestureDetector(
-                child: Stack(
-              children: <Widget>[
-                Container(
-                    height: double.infinity,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                        gradient: LinearGradient(
-                            begin: Alignment.topCenter,
-                            end: Alignment.bottomCenter,
-                            colors: [
-                          Color.fromARGB(255, 255, 255, 255),
-                          Color.fromARGB(255, 255, 255, 255),
-                          Color.fromARGB(255, 255, 255, 255),
-                          Color.fromARGB(255, 255, 255, 255),
-                        ])),
-                    child: SingleChildScrollView(
-                        physics: AlwaysScrollableScrollPhysics(),
-                        padding: EdgeInsets.symmetric(horizontal: 25),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            SizedBox(height: 400),
-                            builTextBtn(context),
-                          ],
-                        )))
-              ],
-            ))));
+        backgroundColor: Colors.white,
+        body: SafeArea(
+            child: Center(
+                child: Column(children: [
+          // Search Bar
+          Container(
+            //alignment: Alignment.centerLeft,
+            decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(20),
+                boxShadow: const [
+                  BoxShadow(
+                      color: Colors.black26,
+                      blurRadius: 6,
+                      offset: Offset(0, 2))
+                ]),
+            height: 40,
+            width: 350,
+            child: TextField(
+              style: TextStyle(color: Colors.black87),
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.only(left: 7, bottom: 7),
+                  hintText: 'Search a Provider',
+                  hintStyle: TextStyle(color: Colors.black38)),
+            ),
+          ),
+          SizedBox(
+            height: 15,
+          ),
+          // Doctor Pictures
+          Row(
+            // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              Container(
+                child: new Image.asset('images/robin-circle.png'),
+                alignment: Alignment.center,
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                child: new Image.asset('images/beast-circle.png'),
+                alignment: Alignment.center,
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                child: new Image.asset('images/cyborg-circle.png'),
+                alignment: Alignment.center,
+              ),
+              SizedBox(
+                width: 5,
+              ),
+              Container(
+                child: new Image.asset('images/star-circle.png'),
+                alignment: Alignment.center,
+              ),
+            ],
+          ),
+        ]))));
   }
 }
